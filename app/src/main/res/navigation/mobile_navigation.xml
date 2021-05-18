@@ -14,12 +14,12 @@
     <fragment
         android:id="@+id/navigation_recommend"
         android:name="com.aaron.hulanative.ui.recommend.RecommendFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:label="@string/title_recommend"
+        tools:layout="@layout/fragment_recommend" />
 
     <fragment
         android:id="@+id/navigation_discover"
         android:name="com.aaron.hulanative.ui.discover.DiscoverFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:label="@string/title_discovery"
+        tools:layout="@layout/fragment_discover" />
 </navigation>
