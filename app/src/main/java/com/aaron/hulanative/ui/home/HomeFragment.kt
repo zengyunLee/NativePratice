@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.AsyncDifferConfig
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.aaron.hulanative.R
 
@@ -28,6 +29,7 @@ class HomeFragment : Fragment() {
         val adapter = PopularsAdapter {
             Log.d("recyclerview item",it)
         }
+//        rv.layoutManager = LinearLayoutManager(this.context)
         rv.adapter = adapter
         homeViewModel.fruitList.observe(viewLifecycleOwner, {
             it?.let {
