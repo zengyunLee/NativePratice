@@ -29,7 +29,6 @@ class HomeFragment : Fragment() {
         val adapter = PopularsAdapter {
             Log.d("recyclerview item",it)
         }
-//        rv.layoutManager = LinearLayoutManager(this.context)
         rv.adapter = adapter
         homeViewModel.fruitList.observe(viewLifecycleOwner, {
             it?.let {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:background="@color/material_on_primary_emphasis_medium"
     android:layout_height="44dp">
@@ -8,5 +8,6 @@
         android:gravity="center|center_vertical"
         android:layout_width="match_parent"
         android:text="@string/title_discovery"
+        android:background="@color/design_default_color_secondary"
         android:layout_height="44dp"/>
-</FrameLayout>
+</LinearLayout>
