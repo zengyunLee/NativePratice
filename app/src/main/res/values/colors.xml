@@ -15,6 +15,7 @@
     <color name="gray6">#f9f9f9</color>
     <color name="gray7">#fcfcfc</color>
     <color name="lightPink">#fdf1f1</color>
+    <color name="pink">#e77777</color>
     <color name="rouge">#ff4e4e</color>
     <color name="blue">#7ab9ea</color>
 </resources>
