@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_home">
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.aaron.hulanative.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_recommend"
+            app:destination="@id/navigation_recommend" />
+        <action
+            android:id="@+id/action_navigation_home_to_topicFragment"
+            app:destination="@id/nav_topic_fragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_discover"
+            app:destination="@id/navigation_discover" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_recommend"
+        android:name="com.aaron.hulanative.ui.recommend.RecommendFragment"
+        android:label="@string/title_recommend"
+        tools:layout="@layout/fragment_recommend" />
+    <fragment
+        android:id="@+id/nav_topic_fragment"
+        android:name="com.aaron.hulanative.ui.topic.TopicFragment"
+        android:label="fragment_topic"
+        tools:layout="@layout/fragment_topic" />
+    <fragment
+        android:id="@+id/navigation_discover"
+        android:name="com.aaron.hulanative.ui.discover.DiscoverFragment"
+        android:label="@string/title_discovery"
+        tools:layout="@layout/fragment_discover" />
+    <fragment
+        android:id="@+id/nav_profile_fragment"
+        android:name="com.aaron.hulanative.ui.mine.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>
