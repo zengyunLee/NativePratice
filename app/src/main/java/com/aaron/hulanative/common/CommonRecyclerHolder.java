@@ -10,12 +10,6 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-/**
- * @author nanchen
- * @fileName ischool
- * @packageName com.idtechinfo.shouxiner.adapter.common
- * @date 2016/09/02  15:41
- */
 public class CommonRecyclerHolder extends RecyclerView.ViewHolder {
     private SparseArray<View> views;
     private Context context;
@@ -88,16 +82,6 @@ public class CommonRecyclerHolder extends RecyclerView.ViewHolder {
         iv.setImageBitmap(bitmap);
         return this;
     }
-
-//    /**
-//     * 设置图片
-//     */
-//    public CommonRecyclerHolder setImageByUrl(int viewId, String url){
-//        Picasso.with(context).load(url).into((ImageView) getView(viewId));
-//        return this;
-//    }
-
-
 
     public CommonRecyclerHolder setOnRecyclerItemClickListener(int viewId, OnClickListener listener){
         View view = getView(viewId);

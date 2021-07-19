@@ -16,14 +16,21 @@ import java.util.List;
  * @date 2016/09/02  15:47
  */
 public abstract class CommonRecyclerAdapter<T> extends RecyclerView.Adapter<CommonRecyclerHolder> {
-    private Context context;//上下文
-    private List<T> list;//数据源
+    private final Context context;//上下文
+    private final List<T> list;//数据源
     private LayoutInflater inflater;//布局器
-    private int itemLayoutId;//布局id
+    private final int itemLayoutId;//布局id
     private boolean isScrolling;//是否在滚动
     private OnItemClickListener listener;//点击事件监听器
     private OnItemLongClickListener longClickListener;//长按监听器
     private RecyclerView recyclerView;
+
+    public CommonRecyclerAdapter(Context context, List<T> list, int itemLayoutId) {
+        this.context = context;
+        this.list = list;
+        this.itemLayoutId = itemLayoutId;
+        inflater = LayoutInflater.from(context);
+    }
 
     //在RecyclerView提供数据的时候调用
     @Override
@@ -70,25 +77,6 @@ public abstract class CommonRecyclerAdapter<T> extends RecyclerView.Adapter<Comm
         notifyItemRemoved(position);
     }
 
-
-    public CommonRecyclerAdapter(Context context, List<T> list, int itemLayoutId) {
-        this.context = context;
-        this.list = list;
-        this.itemLayoutId = itemLayoutId;
-        inflater = LayoutInflater.from(context);
-
-        //        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-        //            @Override
-        //            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-        //                super.onScrollStateChanged(recyclerView, newState);
-        //                isScrolling = !(newState == RecyclerView.SCROLL_STATE_IDLE);
-        //                if (!isScrolling) {
-        //                    notifyDataSetChanged();
-        //                }
-        //            }
-        //        });
-    }
-
     @Override
     public CommonRecyclerHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = inflater.inflate(itemLayoutId, parent, false);
@@ -108,7 +96,6 @@ public abstract class CommonRecyclerAdapter<T> extends RecyclerView.Adapter<Comm
             }
         });
 
-
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
@@ -122,7 +109,6 @@ public abstract class CommonRecyclerAdapter<T> extends RecyclerView.Adapter<Comm
         });
 
         convert(holder, list.get(position), position, isScrolling);
-
     }
 
     @Override
